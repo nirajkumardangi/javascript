@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. In reiciendis quas nisi ratione tempore repudiandae excepturi ipsa officia ullam aliquid eveniet cum, commodi fugit quaerat et! Perferendis placeat nisi aliquid et architecto? Dolorem enim reiciendis quos odit debitis neque nemo accusantium porro laudantium accusamus, exercitationem saepe. Impedit, qui? Eius, maxime?</h1>
+
+    <button id="size-12">12</button>
+    <button id="size-14">14</button>
+    <button id="size-16">16</button>
+
+    <script>
+        function makeSizer(size) {
+            return function () {
+                document.body.style.fontSize = `${size}px`;
+            };
+        }
+
+        const size12 = makeSizer(12);
+        const size14 = makeSizer(14);
+        const size16 = makeSizer(16);
+
+        document.getElementById("size-12").onclick = size12;
+        document.getElementById("size-14").onclick = size14;
+        document.getElementById("size-16").onclick = size16;
+    </script>
+</body>
+
+</html>

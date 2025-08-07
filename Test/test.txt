@@ -1,0 +1,32 @@
+Regular expressions in JavaScript come with several methods that allow you to perform various operations on strings. Here are some of the commonly used methods:
+
+1. test() Method: Checks if a pattern is present in a string. Returns `true` if a match is found, `false` otherwise.
+const pattern = /world/;
+console.log(pattern.test('Hello, world!')); // Output: true
+
+
+2. exec() Method: Searches a string for a match and returns the result as an array. If no match is found, it returns `null`.
+const pattern = /world/;
+console.log(pattern.exec('Hello, world!')); // Output: [ 'world', index: 7, input: 'Helloworld!', groups: undefined ]
+
+
+
+
+
+Flags and Option: Regular expressions can include flags to modify their behavior.
+g: Global flag (matches all occurrences).
+i: Case-insensitive flag.
+m: Multi-line flag.
+
+const pattern = /world/gi; // Global and case-insensitive matching
+
+
+Example Combinin Methods avascript
+const text = 'apple, orange, banana';
+const pattern = /\s*,\s*/; // Matches commas with optional spaces around them
+
+// Using match and split together to tokenize the string
+const tokens = text.split(pattern);
+console.log(tokens); // Output: [ 'apple', 'orange', 'banana' ]
+
+In this example, the regular expression `/\s*,\s*/` is used to match commas with optional spaces around them. The `split` method is then used to tokenize the string based on this pattern, resulting in an array of fruits.

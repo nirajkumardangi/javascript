@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Input Data Using DOM</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Enter Data to Store & Print</h2>
+
+        <!-- input field -->
+        <label for="inputField">Enter Data: </label>
+        <input type="text" name="userData" id="inputField">
+
+        <!-- button -->
+        <input id="storeButton" type="button" value="Store Data">
+
+        <!-- display data area -->
+        <div class="displayData"></div>
+    </div>
+    <script>
+
+        const inputField = document.querySelector('#inputField');
+        const storeButton = document.querySelector('#storeButton');
+        const displayData = document.querySelector('.displayData');
+
+        // Create a new <ul> element
+        const ul = document.createElement('ul');
+        displayData.appendChild(ul);
+
+        storeButton.addEventListener('click', function () {
+            const inputData = inputField.value;
+            
+            if (inputData) {
+                const listItem = document.createElement('li');
+
+                listItem.textContent = inputData;
+                ul.appendChild(listItem);
+                inputField.value = '';
+            } else {
+                alert("Fill Input Filed");
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

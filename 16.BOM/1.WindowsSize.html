@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Size with DOM</title>
+</head>
+
+<body onresize="ResizeFunction()">
+    <p id="ih"> </p>
+    <p id="oh"> </p>
+    <p id="iw"> </p>
+    <p id="ow"> </p>
+
+    <script>
+        // 🙋‍♀️ Windows Inner Height and Outer Height Methods ==>
+        
+        function ResizeFunction() {
+            console.clear();
+            // >>- Inner Height -->
+            var iHeight = window.innerHeight;
+            console.log('Inner Height: ' + iHeight);
+            document.getElementById("ih").innerHTML = "Inner Height: " + iHeight
+
+            // >>- Outer Height -->
+            var oHeight = window.outerHeight;
+            console.log('Outer Height: ' + oHeight);
+            document.getElementById("oh").innerHTML = "Outer Height: " + oHeight
+
+            // >>- Inner Width -->
+            var iWidth = window.innerWidth;
+            console.log('Inner Width: ' + iWidth);
+            document.getElementById("iw").innerHTML = "Inner Width: " + iWidth
+
+            // >>- Inner Width -->
+            var oWidth = window.outerWidth;
+            console.log('Inner Width: ' + oWidth);
+            document.getElementById("ow").innerHTML = "Outer Width: " + iWidth
+        }
+
+    </script>
+</body>
+
+</html>

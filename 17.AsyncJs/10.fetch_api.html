@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
+        .otro-blockquote {
+            font-size: 1.4em;
+            width: 60%;
+            margin: 50px auto;
+            font-family: Open Sans;
+            font-style: italic;
+            color: #555555;
+            padding: 1.2em 30px 1.2em 75px;
+            border-left: 8px solid #78C0A8;
+            line-height: 1.6;
+            position: relative;
+            background: #EDEDED;
+        }
+
+        .otro-blockquote::before {
+            font-family: Arial;
+            content: "\201C";
+            color: #78C0A8;
+            font-size: 4em;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+        }
+
+        .otro-blockquote::after {
+            content: '';
+        }
+
+        .otro-blockquote span {
+            display: block;
+            color: #333333;
+            font-style: normal;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+        /* CSS */
+        .button-52 {
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            padding: 13px 20px 13px;
+            margin: 0 auto;
+            display: block;
+            outline: 0;
+            border: 1px solid black;
+            cursor: pointer;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-52:after {
+            content: "";
+            background-color: #ffe54c;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+        }
+
+        .button-52:hover:after {
+            top: 0px;
+            left: 0px;
+        }
+
+        @media (min-width: 768px) {
+            .button-52 {
+                padding: 13px 50px 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <blockquote class="otro-blockquote">
+        <div id="content"></div>
+        <span id="author"></span>
+    </blockquote>
+    <button class="button-52" role="button" id="btn">Generate</button>
+
+
+    <script>
+
+        const author = document.querySelector("#author");
+        const content = document.querySelector("#content");
+        const btn = document.querySelector("#btn");
+
+        const URL = "https://api.quotable.io/quotes/random";
+
+        // using async/ await
+        async function getRandomQuotes() {
+            const response = await fetch(URL);
+            const data = await response.json();
+            author.innerText = data[0].author;
+            content.innerText = data[0].content;
+        }
+
+        btn.addEventListener('click', function () {
+            getRandomQuotes();
+        })
+
+    </script>
+
+</body>
+
+</html>

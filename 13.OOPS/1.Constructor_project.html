@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="accountForm">
+        <input type="text" id="customerName" placeholder="Account name">
+        <input type="number" id="accountBalance" placeholder="Initial balance">
+        <button>Create Account</button>
+    </form>
+    <hr />
+    <form id="depositForm">
+        <input type="number" id="accountNumber" placeholder="Account number">
+        <input type="number" id="amount" placeholder="Amount">
+        <button>Deposit</button>
+    </form>
+
+    <!-- javascript -->
+    <script>
+
+        // Constructor Function
+        function AccountDetails(accountName, balance = 0) {
+            // properties
+            this.accountName = accountName;
+            this.accountNumber = Date.now();
+            this.balance = balance;
+
+            // deposit method/function
+            this.deposit = function (amount) {
+                this.balance += amount;
+            };
+
+            // withdraw method/function
+            this.withdraw = (amount) => {
+                this.balance -= amount;
+            };
+        }
+
+
+        // form part
+        const accounts = [];
+
+        const accountForm = document.querySelector('#accountForm');
+        const customerName = document.querySelector('#customerName');
+        const accountBalance = document.querySelector('#accountBalance');
+
+        const depositForm = document.querySelector('#depositForm');
+        const accountNumber = document.querySelector('#accountNumber');
+        const amount = document.querySelector('#amount');
+
+        accountForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const account = new AccountDetails(customerName.value, +accountBalance.value)
+            accounts.push(account);
+            console.log(accounts);
+        })
+
+        depositForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let account = accounts.find((acc) => acc.accountNumber === +accountNumber.value);;
+            account.deposit(+amount.value);
+            console.log(accounts);
+        });
+
+
+    </script>
+</body>
+
+</html>

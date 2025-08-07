@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙋‍♀️ Windows Open and Close Methods</title>
+</head>
+
+<body>
+
+    <button onclick="OpenWindows()" type="button">Open Windows</button>
+    <button onclick="CloseWindows()" type="button">Close Windows</button>
+
+    <!-- Javascript -->
+    <script>
+        let x;
+        function OpenWindows() {
+            x = window.open("http://127.0.0.1:5500/11.DOM/DOM%20Project%203/3.formEvent.html", "_blank", "width= 500px, height= 400px, left= 100px, top= 100px");
+        }
+
+        function CloseWindows() {
+            x.close(x);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+{
+    "string": "Hello, JSON!",
+    "number": 42,
+    "object": {
+        "key": "value"
+    },
+    "array": [1, 2, 3],
+    "boolean": true,
+    "nullValue": null
+}

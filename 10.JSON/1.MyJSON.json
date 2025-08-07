@@ -1,0 +1,11 @@
+{
+    "name": "Niraj",
+    "age": 22,
+    "city": "Ranchi",
+    "isLogin": true,
+    "grades": [23, 45, 67, 78],
+    "address": {
+        "street": "123 main road",
+        "zipCode": 825401
+    } 
+}

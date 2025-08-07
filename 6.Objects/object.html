@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // user = {
+    //   name: 'Niraj',
+    //   age: 22,
+    //   [fruits]: 10,
+    // }
+
+    // let key = prompt("My name is ", "name");
+    // alert(user[key]) // alert - Niraj
+
+
+
+    // let fruits = prompt('Which fruits to buy', "apple");
+    // user = {
+    //   name: 'Niraj',
+    //   age: 22,
+    //   [fruits]: 10,
+    // }
+    // console.log(user);
+
+
+
+    //=> property value shorthand
+
+    // function makeUser(name, age) {
+    //   return{
+    //     name : name,
+    //     age : 22,
+    //   }
+    // }
+
+    // function makeUser(name, age) {
+    //   return{
+    //     name, // same as name: name
+    //     age,  // same as age: age
+    //   }
+    // }
+
+    // let user = makeUser("niraj", 22);
+    // console.log(user);
+
+
+
+    //=> We can use same value as name
+    // user = {
+    //   name,
+    //   class: 10, // We can use reserved word as object key.
+    //   for: 20,  // We can use reserved word as object key.
+    //   age: 22,
+    // }
+    // console.log(user);
+
+
+
+    //=> Check for emptiness
+    // function isEmpty(obj) {
+    //   for (let key in obj) {
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
+    // let schedule = {};
+    // console.log(isEmpty(schedule));
+
+
+
+    // Question-2: check sum of salaries
+    // let salaries = {
+    //   John: 100,
+    //   Ann: 160,
+    //   Pete: 130
+    // }
+
+    // let sum = 0;
+    // for (let key in salaries){
+    //   sum += salaries[key];
+    // } 
+
+    // console.log(sum);
+
+
+
+    // question-3: only multiply numeric property
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+
+    function multiplyNumeric(obj) {
+      for (let key in obj) {
+        if (typeof obj[key] == 'number') {
+          obj[key] *= 2;
+        }
+      }
+    }
+    multiplyNumeric(menu);
+    console.log(menu); // {width: 400, height: 600, title: 'My menu'}
+
+  </script>
+</body>
+
+</html>

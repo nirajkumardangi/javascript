@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html id="main">
+<head>
+    <title>DOM Navigation</title>
+</head>
+<style>
+    #outer{
+        width: 550px;
+        height: 300px;
+        padding:10px 10px;
+        margin: 0 auto;
+        background: lightsalmon;
+    }
+
+    #inner{
+       width: 500px;
+        height: 200px;
+        padding:10px 10px;
+        margin:0 auto ;
+        background: mediumorchid;
+    }
+
+    #inner div{
+        display: inline-block;
+        background: #fff;
+        width: 95px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    #test1 p{
+        padding-left: 20px;
+    }
+</style>
+
+<body>
+    <div id="outer">
+        <h2>Outer</h2>
+        <div id="inner">
+            <h2 id="inner-head">Inner</h2>
+            <div>A</div>
+            <div>B</div>
+            <div id="child-c">C</div>
+            <div>D</div>
+            <div id="child-e">E</div>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+
+    <!-- DOM Create Method -->
+    <h2>DOM Create Method:-</h2>
+
+    <div id="test">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quibusdam!</p>
+        <h3>This is heading 3</h3>
+    </div>
+
+    <div id="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quibusdam!</p>
+        <!-- <h3>This is heading 3</h3> -->
+    </div>
+
+    <br><br>
+    
+    <!-- DOM Append Method -->
+    <h2>DOM Append Method:-</h2>
+
+    <div id="test1" style="border: 5px solid #f50cdd">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <!-- DOM Replace & Remove Child -->
+    <h1>DOM Replace & Remove Child</h1>
+    <ul id="list2">
+        <li>orange</li>
+        <li>apple</li>
+        <li>banana</li>
+        <li>mango</li>
+    </ul>
+
+    <!-- DOM Clone Node -->
+    <ul id="list3">
+        <li>banana</li>
+        <li>mango</li>
+    </ul>
+
+    <br>
+
+    <!-- CONTAINS METHOD -->
+    <h1>Contains Methods</h1>
+    <div id="test4">
+        <p id="para">Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div>
+            <p id="para1">Lorem ipsum dolor sit amet.</p> 
+        </div>
+    </div>
+
+    <!-- HAS ATTRIBUTES & HAS CHILD NODES -->
+    <h1>hasAttributes & hasChildNodes</h1>
+    <div id="test5" class="abc">
+        <p>Niraj Kumar</p>
+    </div>
+
+    <script src="2.navigation.js"></script>
+</body>
+</html>

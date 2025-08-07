@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙋‍♀️ Windows Move To and Move By Methods</title>
+</head>
+<body>
+    <button onclick="OpenWindows()">Open Windows</button>
+
+    <!-- moveTo() & moveBy() -->
+    <h3>moveTo() & moveBy()</h3>
+    <button onclick="MoveToWindows()">MoveTo Windows</button>
+    <button onclick="MoveByWindows()">MoveBy Windows</button>
+
+    <!-- resizeTo() & resizeBy() -->
+    <h3>resizeTo() & resizeBy() </h3>
+    <button onclick="ResizeToWindows()">ResizeTo Windows</button>
+    <button onclick="ResizeByWindows()">ResizeBy Windows</button>
+
+    <script>
+        let x;
+        function OpenWindows(){
+            x = window.open(" ", "_blank", "width= 500, height=300, left=20, top=20");
+            x.document.write("Hello Niraj 🙋‍♀️ How Are You"); 
+            // moveTo() method does not work with external links.
+        }
+
+        //moveTo(): ==>
+        function MoveToWindows(){
+            x.moveTo(100,100);
+        }
+
+        // moveBy(): ==>
+        function MoveByWindows(){
+            x.moveBy(100, 100);
+        }
+
+        // resizeTo(): ==>
+        function ResizeToWindows(){
+            x.resizeTo(300, 200);
+        }
+
+        // resizeBY(): ==>
+        function ResizeByWindows(){
+            x.resizeBy(200, 100);
+        }
+
+        scrollTo(x-axis, y-axis);
+        scrollBo(x-axis, y-axis);
+    </script>
+</body>
+</html>
